@@ -1,0 +1,154 @@
+/* ═══════════════════════════════════════════════
+   STUDENT PROFILE PAGE — Design Tokens
+   ═══════════════════════════════════════════════ */
+:root {
+  --sp-card: #ffffff;
+  --sp-border: #e2e8f0;
+  --sp-border-light: #f1f5f9;
+  --sp-text-h: #0f172a;
+  --sp-text-m: #64748b;
+  --sp-text-f: #94a3b8;
+  --sp-blue: #2563eb;
+  --sp-green: #16a34a;
+  --sp-red: #dc2626;
+  --sp-amber: #d97706;
+  --sp-purple: #7c3aed;
+  --sp-cyan: #0891b2;
+  --sp-radius: 14px;
+}
+.sp-page { padding:0 0 40px; animation:spFadeUp .35s ease both; }
+@keyframes spFadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+/* Tabs */
+.sp-tabs { display:flex; gap:4px; background:#f1f5f9; border-radius:12px; padding:4px; margin-bottom:24px; width:fit-content; flex-wrap:wrap; }
+.sp-tab { display:inline-flex; align-items:center; gap:7px; padding:10px 18px; border-radius:10px; border:none; background:transparent; font-size:12.5px; font-weight:600; color:#64748b; cursor:pointer; font-family:'IBM Plex Sans Thai',sans-serif; transition:all .2s; white-space:nowrap; }
+.sp-tab:hover { color:#334155; background:rgba(255,255,255,.6); }
+.sp-tab.active { background:white; color:#0f172a; box-shadow:var(--ui-shadow-xs); }
+
+/* Cards */
+.sp-card { background:var(--sp-card); border:1.5px solid var(--sp-border); border-radius:var(--sp-radius); padding:22px 24px; margin-bottom:16px; box-shadow:var(--ui-shadow-sm); transition:box-shadow .2s; }
+.sp-card:hover { box-shadow:var(--ui-shadow-md); }
+.sp-card-title { display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--sp-text-h); margin-bottom:14px; }
+.sp-card-desc { font-size:12.5px; color:var(--sp-text-m); line-height:1.7; margin-bottom:16px; }
+
+/* Two-col */
+.sp-two-col { display:grid; grid-template-columns:1fr 320px; gap:18px; align-items:start; }
+@media(max-width:1024px){ .sp-two-col{grid-template-columns:1fr} }
+
+/* Profile header */
+.sp-profile-header { display:flex; gap:20px; align-items:center; padding:24px; background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%); border-radius:var(--sp-radius); margin-bottom:16px; color:white; }
+.sp-avatar { width:72px; height:72px; border-radius:50%; background:rgba(255,255,255,.2); display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:800; border:3px solid rgba(255,255,255,.4); flex-shrink:0; }
+.sp-profile-name { font-size:22px; font-weight:800; margin-bottom:2px; }
+.sp-profile-meta { font-size:12.5px; opacity:.85; display:flex; gap:12px; flex-wrap:wrap; }
+
+/* Table */
+.sp-table-wrap { border-radius:var(--sp-radius); border:1.5px solid var(--sp-border); overflow-x:auto; box-shadow:var(--ui-shadow-sm); }
+.sp-table { width:100%; border-collapse:collapse; font-size:12.5px; }
+.sp-table th { background:#f8fafc; font-weight:700; font-size:11px; color:var(--sp-text-m); text-transform:uppercase; letter-spacing:.3px; padding:10px 14px; text-align:left; border-bottom:1.5px solid var(--sp-border); white-space:nowrap; }
+.sp-table td { padding:10px 14px; border-bottom:1px solid var(--sp-border-light); color:var(--sp-text-h); font-size:12.5px; }
+.sp-table tr:last-child td { border-bottom:none; }
+.sp-table tr:hover td { background:#f8fafc; }
+
+/* Badges */
+.sp-badge { display:inline-flex; align-items:center; gap:4px; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:700; white-space:nowrap; }
+.sp-badge-active { background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0; }
+.sp-badge-completed { background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; }
+.sp-badge-transferred { background:#fff7ed; color:#c2410c; border:1px solid #fed7aa; }
+.sp-badge-other { background:#f8fafc; color:#475569; border:1px solid #cbd5e1; }
+.sp-badge-verified { background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0; }
+.sp-badge-unverified { background:#fffbeb; color:#92400e; border:1px solid #fde68a; }
+.sp-badge-absent { background:#fef2f2; color:#991b1b; border:1px solid #fecaca; }
+.sp-badge-leave { background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; }
+.sp-badge-sick { background:#fff7ed; color:#c2410c; border:1px solid #fed7aa; }
+
+/* Stat Grid */
+.sp-stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+@media(max-width:768px){ .sp-stat-grid{grid-template-columns:repeat(2,1fr)} }
+.sp-stat-card { background:white; border:1.5px solid var(--sp-border); border-radius:12px; padding:16px 18px; text-align:center; transition:all .2s; }
+.sp-stat-card:hover { border-color:#cbd5e1; transform:translateY(-1px); }
+.sp-stat-num { font-size:26px; font-weight:800; line-height:1.2; letter-spacing:-.5px; }
+.sp-stat-lbl { font-size:11px; font-weight:600; color:var(--sp-text-m); margin-top:4px; text-transform:uppercase; letter-spacing:.3px; }
+
+/* Info field */
+.sp-field { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(0,0,0,.05); font-size:13px; }
+.sp-field:last-child { border-bottom:none; }
+.sp-field-label { color:var(--sp-text-m); font-weight:500; }
+.sp-field-value { color:var(--sp-text-h); font-weight:600; text-align:right; }
+
+/* Timeline */
+.sp-timeline { position:relative; padding-left:24px; }
+.sp-timeline::before { content:''; position:absolute; left:7px; top:4px; bottom:4px; width:2px; background:#e2e8f0; border-radius:2px; }
+.sp-timeline-item { position:relative; padding-bottom:18px; }
+.sp-timeline-item:last-child { padding-bottom:0; }
+.sp-timeline-dot { position:absolute; left:-20px; top:3px; width:10px; height:10px; border-radius:50%; border:2px solid white; }
+.sp-timeline-dot.blue { background:var(--sp-blue); }
+.sp-timeline-dot.green { background:var(--sp-green); }
+.sp-timeline-dot.amber { background:var(--sp-amber); }
+.sp-timeline-dot.purple { background:var(--sp-purple); }
+.sp-timeline-date { font-size:10.5px; font-weight:600; color:var(--sp-text-f); margin-bottom:3px; }
+.sp-timeline-text { font-size:12.5px; color:var(--sp-text-h); line-height:1.5; }
+
+/* Info panel */
+.sp-info-panel { background:#f0f9ff; border:1px solid #bae6fd; border-radius:12px; padding:14px 18px; font-size:12px; margin-bottom:16px; }
+.sp-info-title { display:flex; align-items:center; gap:6px; font-weight:700; color:#0369a1; margin-bottom:8px; font-size:12.5px; }
+.sp-info-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5px; color:var(--sp-text-m); line-height:1.6; }
+.sp-info-list li::before { content:"•"; margin-right:8px; color:#93c5fd; font-weight:bold; }
+.sp-divider { height:1px; background:var(--sp-border); margin:16px 0; }
+
+/* Completion bar */
+.sp-completion-bar { height:6px; border-radius:4px; background:#e2e8f0; overflow:hidden; }
+.sp-completion-fill { height:100%; border-radius:4px; transition:width .4s ease; }
+.sp-completion-fill.green { background:var(--sp-green); }
+.sp-completion-fill.amber { background:var(--sp-amber); }
+.sp-completion-fill.red { background:var(--sp-red); }
+
+/* Dark mode */
+html.dark {
+  --sp-card: #1e293b;
+  --sp-border: #334155;
+  --sp-border-light: #1e293b;
+  --sp-text-h: #f1f5f9;
+  --sp-text-m: #94a3b8;
+  --sp-text-f: #64748b;
+}
+html.dark .sp-card { background:var(--sp-card); border-color:var(--sp-border); }
+html.dark .sp-table th { background:#0f172a; border-color:var(--sp-border); color:var(--sp-text-m); }
+html.dark .sp-table td { border-color:var(--sp-border-light); color:var(--sp-text-h); }
+html.dark .sp-table tr:hover td { background:#0f172a; }
+html.dark .sp-tabs { background:#1e293b; }
+html.dark .sp-tab { color:var(--sp-text-m); }
+html.dark .sp-tab.active { background:#334155; color:var(--sp-text-h); }
+html.dark .sp-stat-card { background:var(--sp-card); border-color:var(--sp-border); }
+html.dark .sp-profile-header { background:linear-gradient(135deg,#1e293b 0%,#334155 100%); }
+html.dark .sp-info-panel { background:rgba(14,165,233,.08); border-color:rgba(14,165,233,.2); }
+html.dark .sp-info-title { color: #38bdf8; }
+
+@media (max-width: 768px) {
+  .sp-tabs {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+  .sp-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .sp-tab {
+    flex: 0 0 auto;
+  }
+  .sp-card {
+    padding: 14px;
+  }
+  .sp-profile-header {
+    padding: 16px;
+    gap: 12px;
+  }
+  .sp-avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 22px;
+  }
+  .sp-profile-name {
+    font-size: 18px;
+  }
+}
